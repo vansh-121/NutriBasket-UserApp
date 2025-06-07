@@ -31,65 +31,18 @@ class ModuleView extends StatelessWidget {
       }),
       splashController.moduleList != null
           ? splashController.moduleList!.isNotEmpty
-              ? GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    mainAxisSpacing: Dimensions.paddingSizeSmall,
-                    crossAxisSpacing: Dimensions.paddingSizeSmall,
-                    childAspectRatio: (1 / 1),
+              ? Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Dimensions.paddingSizeSmall,
+                    vertical: Dimensions.paddingSizeExtraSmall,
                   ),
-                  padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-                  itemCount: splashController.moduleList!.length,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radiusDefault),
-                        color: Theme.of(context).cardColor,
-                        border: Border.all(
-                            color: Theme.of(context).primaryColor, width: 0.15),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              spreadRadius: 1,
-                              blurRadius: 3)
-                        ],
-                      ),
-                      child: CustomInkWell(
-                        onTap: () => splashController.switchModule(index, true),
-                        radius: Dimensions.radiusDefault,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(
-                                    Dimensions.radiusSmall),
-                                child: CustomImage(
-                                  image:
-                                      '${splashController.moduleList![index].iconFullUrl}',
-                                  height: 50,
-                                  width: 50,
-                                ),
-                              ),
-                              const SizedBox(
-                                  height: Dimensions.paddingSizeSmall),
-                              Center(
-                                  child: Text(
-                                splashController.moduleList![index].moduleName!,
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: robotoMedium.copyWith(
-                                    fontSize: Dimensions.fontSizeSmall),
-                              )),
-                            ]),
-                      ),
-                    );
-                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Single grocery module card with compact size
+                      _buildCompactModuleCard(context),
+                    ],
+                  ),
                 )
               : Center(
                   child: Padding(
@@ -182,6 +135,67 @@ class ModuleView extends StatelessWidget {
       const SizedBox(height: 120),
     ]);
   }
+
+  Widget _buildCompactModuleCard(BuildContext context) {
+    // Find the grocery module from the module list
+    final groceryModule = splashController.moduleList!.firstWhere(
+      (module) => module.moduleType == 'grocery',
+      orElse: () => splashController.moduleList!.first,
+    );
+
+    return Container(
+      width: 120, // Fixed compact width
+      height: 90, // Fixed compact height
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+        color: Theme.of(context).cardColor,
+        border: Border.all(
+            color: Theme.of(context).primaryColor.withOpacity(0.3), width: 0.5),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).primaryColor.withOpacity(0.08),
+            spreadRadius: 0.5,
+            blurRadius: 2,
+            offset: const Offset(0, 1),
+          )
+        ],
+      ),
+      child: CustomInkWell(
+        onTap: () => splashController.switchModule(0, true),
+        radius: Dimensions.radiusSmall,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: CustomImage(
+                  image: '${groceryModule.iconFullUrl}',
+                  height: 32, // Smaller icon
+                  width: 32, // Smaller icon
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(height: 6), // Reduced spacing
+              Flexible(
+                child: Text(
+                  groceryModule.moduleName!,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: robotoMedium.copyWith(
+                    fontSize: 11, // Smaller font size
+                    height: 1.2,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class ModuleShimmer extends StatelessWidget {
@@ -190,46 +204,57 @@ class ModuleShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        mainAxisSpacing: Dimensions.paddingSizeSmall,
-        crossAxisSpacing: Dimensions.paddingSizeSmall,
-        childAspectRatio: (1 / 1),
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Dimensions.paddingSizeSmall,
+        vertical: Dimensions.paddingSizeExtraSmall,
       ),
-      padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-      itemCount: 6,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
-            color: Theme.of(context).cardColor,
-            boxShadow: const [
-              BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)
-            ],
-          ),
-          child: Shimmer(
-            duration: const Duration(seconds: 2),
-            enabled: isEnabled,
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                    color: Colors.grey[300]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 120,
+            height: 90,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+              color: Theme.of(context).cardColor,
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black12, blurRadius: 2, spreadRadius: 0.5)
+              ],
+            ),
+            child: Shimmer(
+              duration: const Duration(seconds: 2),
+              enabled: isEnabled,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 32,
+                      width: 32,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Container(
+                      height: 12,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: Dimensions.paddingSizeSmall),
-              Center(
-                  child: Container(
-                      height: 15, width: 50, color: Colors.grey[300])),
-            ]),
+            ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
