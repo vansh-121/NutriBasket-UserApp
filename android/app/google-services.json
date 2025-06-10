@@ -7,9 +7,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:789317166563:android:ae0cdbcb2bae91889a6cd6",
+        "mobilesdk_app_id": "1:789317166563:android:6f858d00522200eb9a6cd6",
         "android_client_info": {
           "package_name": "com.sixamtech.sixam_mart_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789317166563-2gfhskjgst8nd1q3fa7fo9o6eqr1o1sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh0GT9sKvGS0kb_34iTwJaCcgU20EJxJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789317166563-2gfhskjgst8nd1q3fa7fo9o6eqr1o1sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789317166563:android:ae0cdbcb2bae91889a6cd6",
+        "android_client_info": {
+          "package_name": "in.nutribasket.user_app"
         }
       },
       "oauth_client": [
@@ -17,7 +46,7 @@
           "client_id": "789317166563-boiaj5ulahhgs98hijepe1i22u7v2atm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.sixam_mart_user",
+            "package_name": "in.nutribasket.user_app",
             "certificate_hash": "019a4ea59f65a7bf5e7e175209e30bb64678f62d"
           }
         },

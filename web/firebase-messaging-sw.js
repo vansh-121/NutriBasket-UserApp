@@ -2,14 +2,13 @@ importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js");
 importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDFN-73p8zKVZbA0i5DtO215XzAb-xuGSE",
-  authDomain: "ammart-8885e.firebaseapp.com",
-  databaseURL: "https://ammart-8885e-default-rtdb.firebaseio.com",
-  projectId: "ammart-8885e",
-  storageBucket: "ammart-8885e.appspot.com",
-  messagingSenderId: "1000163153346",
-  appId: "1:1000163153346:web:4f702a4b5adbd5c906b25b",
-  measurementId: "G-L1GNL2YV61"
+    apiKey: "AIzaSyA6onISFLWbdzsHN2J2HmzPeiOsodjEJ2k",
+    authDomain: "nutribasket-1fad9.firebaseapp.com",
+    projectId: "nutribasket-1fad9",
+    storageBucket: "nutribasket-1fad9.firebasestorage.app",
+    messagingSenderId: "789317166563",
+    appId: "1:789317166563:web:6482127409d2a9b69a6cd6",
+    measurementId: "G-W8THHHB5T0"
 });
 
 const messaging = firebase.messaging();
@@ -30,7 +29,7 @@ messaging.setBackgroundMessageHandler(function (payload) {
             const title = payload.notification.title;
             const options = {
                 body: payload.notification.score
-              };
+            };
             return registration.showNotification(title, options);
         });
     return promiseChain;

@@ -4,7 +4,7 @@ import 'package:sixam_mart/features/home/widgets/bad_weather_widget.dart';
 import 'package:sixam_mart/features/home/widgets/highlight_widget.dart';
 import 'package:sixam_mart/features/home/widgets/views/banner_view.dart';
 import 'package:sixam_mart/features/home/widgets/views/best_reviewed_item_view.dart';
-import 'package:sixam_mart/features/home/widgets/views/best_store_nearby_view.dart';
+// import 'package:sixam_mart/features/home/widgets/views/best_store_nearby_view.dart';
 import 'package:sixam_mart/features/home/widgets/views/category_view.dart';
 import 'package:sixam_mart/features/home/widgets/views/promo_code_banner_view.dart';
 import 'package:sixam_mart/features/home/widgets/views/item_that_you_love_view.dart';
@@ -37,19 +37,19 @@ class GroceryHomeScreen extends StatelessWidget {
         ),
       ),
       const CategoryView(),
-      isLoggedIn ? const VisitAgainView() : const SizedBox(),
+      // isLoggedIn ? const VisitAgainView() : const SizedBox(),
       const SpecialOfferView(isFood: false, isShop: false),
       const HighlightWidget(),
       const FlashSaleViewWidget(),
-      const BestStoreNearbyView(),
+      // const BestStoreNearbyView(),
       const MostPopularItemView(isFood: false, isShop: false),
       const MiddleSectionBannerView(),
       const BestReviewItemView(),
       const JustForYouView(),
-      const TopOffersNearMe(),
+      // const TopOffersNearMe(),
       const ItemThatYouLoveView(forShop: false),
       isLoggedIn ? const PromoCodeBannerView() : const SizedBox(),
-      const NewOnMartView(isPharmacy: false, isShop: false),
+      // const NewOnMartView(isPharmacy: false, isShop: false),
       const PromotionalBannerView(),
     ]);
   }
