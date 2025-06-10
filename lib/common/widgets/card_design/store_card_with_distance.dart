@@ -70,10 +70,10 @@ class StoreCardWithDistance extends StatelessWidget {
                   }
                 }
               }
-              Get.toNamed(
-                RouteHelper.getStoreRoute(id: store.id, page: 'store'),
-                arguments: StoreScreen(store: store, fromModule: false),
-              );
+              // Get.toNamed(
+              //   RouteHelper.getStoreRoute(id: store.id, page: 'store'),
+              //   arguments: StoreScreen(store: store, fromModule: false),
+              // );
             },
             radius: Dimensions.radiusDefault,
             child: TextHover(builder: (hovered) {
@@ -352,12 +352,12 @@ class StoreCardWithDistance extends StatelessWidget {
                                             }
                                           }
                                         }
-                                        Get.toNamed(
-                                          RouteHelper.getStoreRoute(
-                                              id: store.id, page: 'store'),
-                                          arguments: StoreScreen(
-                                              store: store, fromModule: false),
-                                        );
+                                        // Get.toNamed(
+                                        //   RouteHelper.getStoreRoute(
+                                        //       id: store.id, page: 'store'),
+                                        //   arguments: StoreScreen(
+                                        //       store: store, fromModule: false),
+                                        // );
                                       },
                                       buttonText: 'visit'.tr,
                                       color: Theme.of(context).primaryColor,

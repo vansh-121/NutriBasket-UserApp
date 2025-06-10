@@ -198,10 +198,10 @@ class _WebTopOffersNearMeState extends State<WebTopOffersNearMe> {
                 }
               }
             }
-            Get.toNamed(
-              RouteHelper.getStoreRoute(id: store.id, page: 'store'),
-              arguments: StoreScreen(store: store, fromModule: false),
-            );
+            // Get.toNamed(
+            //   RouteHelper.getStoreRoute(id: store.id, page: 'store'),
+            //   arguments: StoreScreen(store: store, fromModule: false),
+            // );
           },
           child: Stack(
             children: [

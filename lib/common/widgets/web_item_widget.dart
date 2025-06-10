@@ -92,11 +92,11 @@ class WebItemWidget extends StatelessWidget {
                   }
                 }
               }
-              Get.toNamed(
-                RouteHelper.getStoreRoute(
-                    id: store!.id, page: isFeatured ? 'module' : 'item'),
-                arguments: StoreScreen(store: store, fromModule: isFeatured),
-              );
+              // Get.toNamed(
+              //   RouteHelper.getStoreRoute(
+              //       id: store!.id, page: isFeatured ? 'module' : 'item'),
+              //   arguments: StoreScreen(store: store, fromModule: isFeatured),
+              // );
             }
           } else {
             if (isFeatured && Get.find<SplashController>().moduleList != null) {

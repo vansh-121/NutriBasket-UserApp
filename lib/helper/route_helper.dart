@@ -524,23 +524,23 @@ class RouteHelper {
     GetPage(
         name: search,
         page: () => getRoute(SearchScreen(queryText: Get.parameters['query']))),
-    GetPage(
-        name: store,
-        page: () {
-          return getRoute(
-              Get.arguments ??
-                  StoreScreen(
-                    store: Store(
-                        id: Get.parameters['id'] != 'null' &&
-                                Get.parameters['id'] != null
-                            ? int.parse(Get.parameters['id']!)
-                            : null),
-                    fromModule: Get.parameters['page'] != null &&
-                        Get.parameters['page'] == 'module',
-                    slug: Get.parameters['slug'] ?? '',
-                  ),
-              byPuss: Get.parameters['slug']?.isNotEmpty ?? false);
-        }),
+    // GetPage(
+    //     name: store,
+    //     page: () {
+    //       return getRoute(
+    //           Get.arguments ??
+    //               StoreScreen(
+    //                 store: Store(
+    //                     id: Get.parameters['id'] != 'null' &&
+    //                             Get.parameters['id'] != null
+    //                         ? int.parse(Get.parameters['id']!)
+    //                         : null),
+    //                 fromModule: Get.parameters['page'] != null &&
+    //                     Get.parameters['page'] == 'module',
+    //                 slug: Get.parameters['slug'] ?? '',
+    //               ),
+    //           byPuss: Get.parameters['slug']?.isNotEmpty ?? false);
+    //     }),
     GetPage(
         name: orderDetails,
         page: () {
@@ -751,14 +751,14 @@ class RouteHelper {
             storeName: Get.parameters['storeName'],
             store: Store.fromJson(jsonDecode(utf8.decode(base64Url
                 .decode(Get.parameters['store']!.replaceAll(' ', '+')))))))),
-    GetPage(
-        name: allStores,
-        page: () => getRoute(AllStoreScreen(
-              isPopular: Get.parameters['page'] == 'popular',
-              isFeatured: Get.parameters['page'] == 'featured',
-              isTopOfferStore: Get.parameters['page'] == 'topOffer',
-              isNearbyStore: Get.parameters['nearby'] == 'true',
-            ))),
+    // GetPage(
+    //     name: allStores,
+    //     page: () => getRoute(AllStoreScreen(
+    //           isPopular: Get.parameters['page'] == 'popular',
+    //           isFeatured: Get.parameters['page'] == 'featured',
+    //           isTopOfferStore: Get.parameters['page'] == 'topOffer',
+    //           isNearbyStore: Get.parameters['nearby'] == 'true',
+    //         ))),
     GetPage(
         name: itemImages,
         page: () => getRoute(ImageViewerScreen(
@@ -788,10 +788,10 @@ class RouteHelper {
                   base64Url.decode(
                       Get.parameters['destination']!.replaceAll(' ', '+'))))),
             ))),
-    GetPage(
-        name: searchStoreItem,
-        page: () =>
-            getRoute(StoreItemSearchScreen(storeID: Get.parameters['id']))),
+    // GetPage(
+    //     name: searchStoreItem,
+    //     page: () =>
+    //         getRoute(StoreItemSearchScreen(storeID: Get.parameters['id']))),
     GetPage(name: order, page: () => getRoute(const OrderScreen())),
     GetPage(
         name: itemDetails,
@@ -892,12 +892,12 @@ class RouteHelper {
             )),
     GetPage(name: favourite, page: () => const FavouriteScreen()),
     GetPage(name: brands, page: () => const BrandsScreen()),
-    GetPage(
-        name: brandsItemScreen,
-        page: () => BrandsItemScreen(
-              brandId: int.parse(Get.parameters['brandId']!),
-              brandName: Get.parameters['brandName']!,
-            )),
+    // GetPage(
+    //     name: brandsItemScreen,
+    //     page: () => BrandsItemScreen(
+    //           brandId: int.parse(Get.parameters['brandId']!),
+    //           brandName: Get.parameters['brandName']!,
+    //         )),
 
     GetPage(
         name: subscriptionSuccess,

@@ -26,7 +26,7 @@ class OrderScreenState extends State<OrderScreen>
     with TickerProviderStateMixin {
   TabController? _tabController;
   bool _isLoggedIn = AuthHelper.isLoggedIn();
-  List<String> type = ['orders', 'trips'];
+  List<String> type = ['orders'];
   int selectTypeIndex = 0;
   bool haveTaxiModule = false;
 

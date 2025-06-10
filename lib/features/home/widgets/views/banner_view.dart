@@ -81,14 +81,14 @@ class BannerView extends StatelessWidget {
                                         }
                                       }
                                     }
-                                    Get.toNamed(
-                                      RouteHelper.getStoreRoute(
-                                          id: store!.id,
-                                          page:
-                                              isFeatured ? 'module' : 'banner'),
-                                      arguments: StoreScreen(
-                                          store: store, fromModule: isFeatured),
-                                    );
+                                    // Get.toNamed(
+                                    //   RouteHelper.getStoreRoute(
+                                    //       id: store!.id,
+                                    //       page:
+                                    //           isFeatured ? 'module' : 'banner'),
+                                    //   arguments: StoreScreen(
+                                    //       store: store, fromModule: isFeatured),
+                                    // );
                                   } else if (bannerDataList[index]
                                       is BasicCampaignModel) {
                                     BasicCampaignModel campaign =

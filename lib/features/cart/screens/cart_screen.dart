@@ -247,25 +247,25 @@ class _CartScreenState extends State<CartScreen> {
                                                                               0]
                                                                           .item!
                                                                           .moduleId!);
-                                                                  Get.toNamed(
-                                                                    RouteHelper.getStoreRoute(
-                                                                        id: cartController
-                                                                            .cartList[
-                                                                                0]
-                                                                            .item!
-                                                                            .storeId,
-                                                                        page:
-                                                                            'item'),
-                                                                    arguments: StoreScreen(
-                                                                        store: Store(
-                                                                            id: cartController
-                                                                                .cartList[
-                                                                                    0]
-                                                                                .item!
-                                                                                .storeId),
-                                                                        fromModule:
-                                                                            false),
-                                                                  );
+                                                                  // Get.toNamed(
+                                                                  //   RouteHelper.getStoreRoute(
+                                                                  //       id: cartController
+                                                                  //           .cartList[
+                                                                  //               0]
+                                                                  //           .item!
+                                                                  //           .storeId,
+                                                                  //       page:
+                                                                  //           'item'),
+                                                                  //   arguments: StoreScreen(
+                                                                  //       store: Store(
+                                                                  //           id: cartController
+                                                                  //               .cartList[
+                                                                  //                   0]
+                                                                  //               .item!
+                                                                  //               .storeId),
+                                                                  //       fromModule:
+                                                                  //           false),
+                                                                  // );
                                                                 },
                                                                 icon: Icon(
                                                                     Icons

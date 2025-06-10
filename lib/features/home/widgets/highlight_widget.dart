@@ -156,12 +156,12 @@ class HighlightStoreWidget extends StatelessWidget {
       child: TextHover(builder: (hovered) {
         return InkWell(
           onTap: () {
-            Get.toNamed(
-              RouteHelper.getStoreRoute(
-                  id: advertisement.storeId, page: 'store'),
-              arguments: StoreScreen(
-                  store: Store(id: advertisement.storeId), fromModule: false),
-            );
+            // Get.toNamed(
+            //   RouteHelper.getStoreRoute(
+            //       id: advertisement.storeId, page: 'store'),
+            //   arguments: StoreScreen(
+            //       store: Store(id: advertisement.storeId), fromModule: false),
+            // );
           },
           child: Column(children: [
             Expanded(
@@ -438,15 +438,15 @@ class _HighlightVideoWidgetState extends State<HighlightVideoWidget> {
                           const SizedBox(width: Dimensions.paddingSizeDefault),
                           InkWell(
                             onTap: () {
-                              Get.toNamed(
-                                RouteHelper.getStoreRoute(
-                                    id: widget.advertisement.storeId,
-                                    page: 'store'),
-                                arguments: StoreScreen(
-                                    store:
-                                        Store(id: widget.advertisement.storeId),
-                                    fromModule: false),
-                              );
+                              // Get.toNamed(
+                              //   RouteHelper.getStoreRoute(
+                              //       id: widget.advertisement.storeId,
+                              //       page: 'store'),
+                              //   arguments: StoreScreen(
+                              //       store:
+                              //           Store(id: widget.advertisement.storeId),
+                              //       fromModule: false),
+                              // );
                             },
                             child: Container(
                               padding: const EdgeInsets.all(7),

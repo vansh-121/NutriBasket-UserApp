@@ -38,7 +38,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:789317166563:android:ae0cdbcb2bae91889a6cd6",
         "android_client_info": {
-          "package_name": "in.nutribasket.user_app"
+          "package_name": "com.sixamtech.sixam_mart_user"
         }
       },
       "oauth_client": [
@@ -46,7 +46,7 @@
           "client_id": "789317166563-boiaj5ulahhgs98hijepe1i22u7v2atm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "in.nutribasket.user_app",
+            "package_name": "com.sixamtech.sixam_mart_user",
             "certificate_hash": "019a4ea59f65a7bf5e7e175209e30bb64678f62d"
           }
         },

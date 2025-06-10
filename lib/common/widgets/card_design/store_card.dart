@@ -71,10 +71,10 @@ class StoreCard extends StatelessWidget {
                 }
               }
             }
-            Get.toNamed(
-              RouteHelper.getStoreRoute(id: store.id, page: 'store'),
-              arguments: StoreScreen(store: store, fromModule: false),
-            );
+            // Get.toNamed(
+            //   RouteHelper.getStoreRoute(id: store.id, page: 'store'),
+            //   arguments: StoreScreen(store: store, fromModule: false),
+            // );
           },
           padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
           radius: Dimensions.radiusDefault,

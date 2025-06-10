@@ -32,10 +32,10 @@ class PopularStoreCard extends StatelessWidget {
       child: TextHover(builder: (hovered) {
         return CustomInkWell(
           onTap: () {
-            Get.toNamed(
-              RouteHelper.getStoreRoute(id: store.id, page: 'store'),
-              arguments: StoreScreen(store: store, fromModule: false),
-            );
+            // Get.toNamed(
+            //   RouteHelper.getStoreRoute(id: store.id, page: 'store'),
+            //   arguments: StoreScreen(store: store, fromModule: false),
+            // );
           },
           radius: Dimensions.radiusDefault,
           child: ClipRRect(
@@ -63,12 +63,12 @@ class PopularStoreCard extends StatelessWidget {
                     ),
                     child: CustomInkWell(
                       onTap: () {
-                        Get.toNamed(
-                          RouteHelper.getStoreRoute(
-                              id: store.id, page: 'store'),
-                          arguments:
-                              StoreScreen(store: store, fromModule: false),
-                        );
+                        // Get.toNamed(
+                        //   RouteHelper.getStoreRoute(
+                        //       id: store.id, page: 'store'),
+                        //   arguments:
+                        //       StoreScreen(store: store, fromModule: false),
+                        // );
                       },
                       radius: Dimensions.radiusDefault,
                       child: Padding(

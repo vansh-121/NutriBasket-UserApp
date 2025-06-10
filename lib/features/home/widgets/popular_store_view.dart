@@ -111,15 +111,15 @@ class PopularStoreView extends StatelessWidget {
                                         }
                                       }
                                     }
-                                    Get.toNamed(
-                                      RouteHelper.getStoreRoute(
-                                          id: storeList[index].id,
-                                          page:
-                                              isFeatured ? 'module' : 'store'),
-                                      arguments: StoreScreen(
-                                          store: storeList[index],
-                                          fromModule: isFeatured),
-                                    );
+                                    // Get.toNamed(
+                                    //   RouteHelper.getStoreRoute(
+                                    //       id: storeList[index].id,
+                                    //       page:
+                                    //           isFeatured ? 'module' : 'store'),
+                                    //   arguments: StoreScreen(
+                                    //       store: storeList[index],
+                                    //       fromModule: isFeatured),
+                                    // );
                                   },
                                   radius: Dimensions.radiusSmall,
                                   child: Column(

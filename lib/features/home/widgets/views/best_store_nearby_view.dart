@@ -172,14 +172,14 @@ class BestStoreNearbyView extends StatelessWidget {
                                                   }
                                                 }
                                               }
-                                              Get.toNamed(
-                                                RouteHelper.getStoreRoute(
-                                                    id: storeList[index].id,
-                                                    page: 'store'),
-                                                arguments: StoreScreen(
-                                                    store: storeList[index],
-                                                    fromModule: true),
-                                              );
+                                              // Get.toNamed(
+                                              //   RouteHelper.getStoreRoute(
+                                              //       id: storeList[index].id,
+                                              //       page: 'store'),
+                                              //   arguments: StoreScreen(
+                                              //       store: storeList[index],
+                                              //       fromModule: true),
+                                              // );
                                             },
                                             child: StoreCardWithDistance(
                                                 store: storeList[index]),
@@ -266,21 +266,21 @@ class BestStoreNearbyView extends StatelessWidget {
                                                               }
                                                             }
                                                           }
-                                                          Get.toNamed(
-                                                            RouteHelper
-                                                                .getStoreRoute(
-                                                                    id: storeList[
-                                                                            index]
-                                                                        .id,
-                                                                    page:
-                                                                        'store'),
-                                                            arguments: StoreScreen(
-                                                                store:
-                                                                    storeList[
-                                                                        index],
-                                                                fromModule:
-                                                                    true),
-                                                          );
+                                                          // Get.toNamed(
+                                                          //   RouteHelper
+                                                          //       .getStoreRoute(
+                                                          //           id: storeList[
+                                                          //                   index]
+                                                          //               .id,
+                                                          //           page:
+                                                          //               'store'),
+                                                          //   arguments: StoreScreen(
+                                                          //       store:
+                                                          //           storeList[
+                                                          //               index],
+                                                          //       fromModule:
+                                                          //           true),
+                                                          // );
                                                         },
                                                         radius: Dimensions
                                                             .radiusLarge,

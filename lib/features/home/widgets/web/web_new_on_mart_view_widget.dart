@@ -131,14 +131,14 @@ class _WebNewOnMartViewWidgetState extends State<WebNewOnMartViewWidget> {
                                         }
                                       }
                                     }
-                                    Get.toNamed(
-                                      RouteHelper.getStoreRoute(
-                                          id: storeList[index].id,
-                                          page: 'store'),
-                                      arguments: StoreScreen(
-                                          store: storeList[index],
-                                          fromModule: false),
-                                    );
+                                    // Get.toNamed(
+                                    //   RouteHelper.getStoreRoute(
+                                    //       id: storeList[index].id,
+                                    //       page: 'store'),
+                                    //   arguments: StoreScreen(
+                                    //       store: storeList[index],
+                                    //       fromModule: false),
+                                    // );
                                   },
                                   child: Stack(
                                     children: [

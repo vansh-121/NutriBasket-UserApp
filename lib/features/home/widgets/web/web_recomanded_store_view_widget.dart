@@ -69,16 +69,16 @@ class WebRecommendedStoreView extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {
-                                Get.toNamed(
-                                  RouteHelper.getStoreRoute(
-                                      id: storeController
-                                          .recommendedStoreList![index].id,
-                                      page: 'store'),
-                                  arguments: StoreScreen(
-                                      store: storeController
-                                          .recommendedStoreList![index],
-                                      fromModule: false),
-                                );
+                                // Get.toNamed(
+                                //   RouteHelper.getStoreRoute(
+                                //       id: storeController
+                                //           .recommendedStoreList![index].id,
+                                //       page: 'store'),
+                                //   arguments: StoreScreen(
+                                //       store: storeController
+                                //           .recommendedStoreList![index],
+                                //       fromModule: false),
+                                // );
                               },
                               child: TextHover(builder: (hovered) {
                                 return Container(
