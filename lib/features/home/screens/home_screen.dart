@@ -505,61 +505,63 @@ class _HomeScreenState extends State<HomeScreen> {
                               )),
                             ),
 
-                            /// Store Filter Section
-                            SliverPersistentHeader(
-                              key: _headerKey,
-                              pinned: true,
-                              delegate: SliverDelegate(
-                                height: 85,
-                                callback: (val) {
-                                  searchBgShow = val;
-                                },
-                                child: const AllStoreFilterWidget(),
-                              ),
-                            ),
+                            //We don't need the store filter section for grocery for now
 
-                            /// Store List
-                            SliverToBoxAdapter(child: Center(
-                              child: GetBuilder<StoreController>(
-                                  builder: (storeController) {
-                                return Padding(
-                                  padding: EdgeInsets.only(
-                                      bottom:
-                                          ResponsiveHelper.isDesktop(context)
-                                              ? 0
-                                              : 100),
-                                  child: PaginatedListView(
-                                    scrollController: _scrollController,
-                                    totalSize:
-                                        storeController.storeModel?.totalSize,
-                                    offset: storeController.storeModel?.offset,
-                                    onPaginate: (int? offset) async =>
-                                        await storeController.getStoreList(
-                                            offset!, false),
-                                    itemView: ItemsView(
-                                      isStore: true,
-                                      items: null,
-                                      isFoodOrGrocery:
-                                          true, // Set to true for grocery
-                                      stores:
-                                          storeController.storeModel?.stores,
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            ResponsiveHelper.isDesktop(context)
-                                                ? Dimensions
-                                                    .paddingSizeExtraSmall
-                                                : Dimensions.paddingSizeSmall,
-                                        vertical:
-                                            ResponsiveHelper.isDesktop(context)
-                                                ? Dimensions
-                                                    .paddingSizeExtraSmall
-                                                : Dimensions.paddingSizeDefault,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }),
-                            )),
+                            // /// Store Filter Section
+                            // SliverPersistentHeader(
+                            //   key: _headerKey,
+                            //   pinned: true,
+                            //   delegate: SliverDelegate(
+                            //     height: 85,
+                            //     callback: (val) {
+                            //       searchBgShow = val;
+                            //     },
+                            //     child: const AllStoreFilterWidget(),
+                            //   ),
+                            // ),
+
+                            // /// Store List
+                            // SliverToBoxAdapter(child: Center(
+                            //   child: GetBuilder<StoreController>(
+                            //       builder: (storeController) {
+                            //     return Padding(
+                            //       padding: EdgeInsets.only(
+                            //           bottom:
+                            //               ResponsiveHelper.isDesktop(context)
+                            //                   ? 0
+                            //                   : 100),
+                            //       child: PaginatedListView(
+                            //         scrollController: _scrollController,
+                            //         totalSize:
+                            //             storeController.storeModel?.totalSize,
+                            //         offset: storeController.storeModel?.offset,
+                            //         onPaginate: (int? offset) async =>
+                            //             await storeController.getStoreList(
+                            //                 offset!, false),
+                            //         itemView: ItemsView(
+                            //           isStore: true,
+                            //           items: null,
+                            //           isFoodOrGrocery:
+                            //               true, // Set to true for grocery
+                            //           stores:
+                            //               storeController.storeModel?.stores,
+                            //           padding: EdgeInsets.symmetric(
+                            //             horizontal:
+                            //                 ResponsiveHelper.isDesktop(context)
+                            //                     ? Dimensions
+                            //                         .paddingSizeExtraSmall
+                            //                     : Dimensions.paddingSizeSmall,
+                            //             vertical:
+                            //                 ResponsiveHelper.isDesktop(context)
+                            //                     ? Dimensions
+                            //                         .paddingSizeExtraSmall
+                            //                     : Dimensions.paddingSizeDefault,
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     );
+                            //   }),
+                            // )),
                           ],
                         ),
             ),
